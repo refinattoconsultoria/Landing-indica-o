@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganhe R$ 1.000 por Indicação</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #333; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem; text-align: center; background: white; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    h1 { color: #009e60; }
+    .btn { background: #25D366; color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; margin-top: 20px; display: inline-block; text-decoration: none; }
+    .small { font-size: 0.9rem; color: #666; margin-top: 1rem; }
+    img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+    form { margin-top: 2rem; text-align: left; }
+    label { display: block; margin: 10px 0 5px; }
+    input { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    .legal { margin-top: 2rem; font-size: 0.85rem; text-align: left; color: #555; }
+  </style>
+  <script>
+    function enviarWhatsapp() {
+      const nomeIndicador = document.getElementById('indicador').value;
+      const contatoIndicador = document.getElementById('contato_indicador').value;
+      const nomeIndicado = document.getElementById('nome').value;
+      const contatoIndicado = document.getElementById('contato').value;
+
+      const mensagem = `Nova indicação:%0A%0A` +
+                       `*Nome do Indicador:* ${nomeIndicador}%0A` +
+                       `*Contato do Indicador:* ${contatoIndicador}%0A%0A` +
+                       `*Nome do Indicado:* ${nomeIndicado}%0A` +
+                       `*Contato do Indicado:* ${contatoIndicado}`;
+
+      const url = `https://wa.me/5561996973683?text=${mensagem}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Ganhe R$ 1.000,00 por Indicação!</h1>
+    <p>Você conhece alguém que quer comprar uma <strong>chácara ou lote</strong> em Formosa-GO?</p>
+    <p>Indique essa pessoa para a Refinatto Consultoria e receba R$ 1.000,00 se a venda for concluída!</p>
+
+    <form onsubmit="event.preventDefault(); enviarWhatsapp();">
+      <label for="indicador">Seu nome:</label>
+      <input type="text" id="indicador" name="indicador" required>
+
+      <label for="contato_indicador">Seu contato (telefone ou e-mail):</label>
+      <input type="text" id="contato_indicador" name="contato_indicador" required>
+
+      <label for="nome">Nome da pessoa indicada:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="contato">Contato do indicado (telefone, WhatsApp ou e-mail):</label>
+      <input type="text" id="contato" name="contato" required>
+
+      <button class="btn" type="submit">Indicar Agora pelo WhatsApp</button>
+    </form>
+
+    <div class="legal">
+      <h3>Regras da Campanha de Indicação:</h3>
+      <ul>
+        <li>O valor de R$ 1.000,00 será pago somente após o fechamento e assinatura do contrato de compra e venda do lote ou chácara.</li>
+        <li>A pessoa indicada deve ser um novo cliente, que ainda não tenha contato prévio com a Refinatto Consultoria.</li>
+        <li>A indicação deve ser feita antes do primeiro contato do comprador com a empresa.</li>
+        <li>Não serão aceitas indicações retroativas.</li>
+        <li>O pagamento da comissão será realizado via transferência bancária mediante envio dos dados bancários do indicante.</li>
+        <li>Reservamo-nos o direito de validar e confirmar a veracidade da indicação antes do pagamento.</li>
+        <li>Campanha válida por tempo indeterminado, podendo ser encerrada sem aviso prévio.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
